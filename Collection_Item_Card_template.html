@@ -98,6 +98,13 @@
 		margin-left: auto;
 		}
 		
+		.container 
+		{
+		max-width: 1200px;
+		margin: auto;
+		padding: 1rem;
+		background: #BAB78D;
+		}
 		
 		.product-main 
 		{
@@ -278,51 +285,69 @@
 		</a>
 	</div>
 	
-	<div class="product-main">
-      <!-- Левая колонка -->
-      <div class="product-images">
-        <button class="image-nav left" onclick="prevImage()">&#8249;</button>
-        <img id="main-image" src="img/MyCollection/Rucksack/M44-1944/1.jpg" alt="1" />
-        <button class="image-nav right" onclick="nextImage()">&#8250;</button>
-
-        <div class="gallery" id="gallery">
-          <img src="img/MyCollection/Rucksack/M44-1944/1.jpg" alt="1" onclick="setImage(0)">
-          <img src="img/MyCollection/Rucksack/M44-1944/2.jpg" alt="2" onclick="setImage(1)">
-          <img src="img/MyCollection/Rucksack/M44-1944/3.jpg" alt="3" onclick="setImage(2)">
-          <img src="img/MyCollection/Rucksack/M44-1944/4.jpg" alt="4" onclick="setImage(3)">
-          <img src="img/MyCollection/Rucksack/M44-1944/5.jpg" alt="5" onclick="setImage(4)">
-          <img src="img/MyCollection/Rucksack/M44-1944/6.jpg" alt="6" onclick="setImage(5)">
-          <img src="img/MyCollection/Rucksack/M44-1944/7.jpg" alt="7" onclick="setImage(6)">
-          <img src="img/MyCollection/Rucksack/M44-1944/8.jpg" alt="8" onclick="setImage(7)">
-          <img src="img/MyCollection/Rucksack/M44-1944/9.jpg" alt="9" onclick="setImage(8)">
-          <img src="img/MyCollection/Rucksack/M44-1944/10.jpg" alt="10" onclick="setImage(9)">
-        </div>
-      </div>
-
-      <!-- Правая колонка -->
-      <div class="product-info">
-        <h1 class="product-title">HRE 43 "Coconut" Canteen</h1>
-        <p class="product-price">$100.00</p>
-        <div class="short-description">
-          <p>This is an original WWII-issued canteen, equipped with newly made straps, lid, and cup.</p>
-          <p>The tan-colored strap is made of natural 16mm (5/8 inch) cotton strap, just as it should be. It is hand-sewn with natural linen thread. This is a mid- to late-war period version with a simple roller buckle.</p>
-          <p>The item is located in California, USA. It will be shipped via USPS. Shipping within the continental United States is up to $10.</p>
-          <p>I accept payment via PayPal or a simple Zelle transfer.</p>
-        </div>
-      </div>
-    </div>
-  </div>
+	<div class="container">
+		<!-- Breadcrumbs -->
+		<nav class="d-none d-md-block" aria-label="breadcrumb" style="--bs-breadcrumb-divider: '>'; font-family: 'Bronzion Castle'; margin-bottom: 1rem;">
+			<ol class="breadcrumb bg-transparent p-2">
+			<li class="breadcrumb-item"><a href="Index.html" class="text-dark text-decoration-none">Home</a></li>
+			<li class="breadcrumb-item"><a href="MyCollection.html" class="text-dark text-decoration-none">My Collection</a></li>
+			<li class="breadcrumb-item"><a href="Rucksack.html" class="text-dark text-decoration-none">Rucksack</a></li>
+			<li class="breadcrumb-item active" aria-current="page">Collection item Template</li>
+			</ol>
+		</nav>
 	
-	
-	<center class="text-center mt-auto"> 
-		<p>It is not for sale or exchange</p>
-		<p>But, if you want to discuss this item - feel free to contact me :)</p>
-		<ul class="mobile-list d-md-none mt-3 text-start">
-			<li><a href="https://www.facebook.com/profile.php?id=61569806094078">FB BillyAl Home Workshop</a></li>
-			<li><a href="https://www.instagram.com/77billyal77/">Instagram BillyAl Home Workshop</a></li>
-			<li>billyal.home.workshop@gmail.com</li>
-		</ul>
-	</center>
+		<div class="product-main">
+		<!-- Левая колонка -->
+			<div class="product-images">
+				<button class="image-nav left" onclick="prevImage()">&#8249;</button>
+				<img id="main-image" src="img/MyCollection/Rucksack/M44-1944/1.jpg" alt="1" />
+				<button class="image-nav right" onclick="nextImage()">&#8250;</button>
+
+			<div class="gallery" id="gallery">
+				<img src="img/MyCollection/Rucksack/M44-1944/1.jpg" alt="1" onclick="setImage(0)">
+				<img src="img/MyCollection/Rucksack/M44-1944/2.jpg" alt="2" onclick="setImage(1)">
+				<img src="img/MyCollection/Rucksack/M44-1944/3.jpg" alt="3" onclick="setImage(2)">
+				<img src="img/MyCollection/Rucksack/M44-1944/4.jpg" alt="4" onclick="setImage(3)">
+				<img src="img/MyCollection/Rucksack/M44-1944/5.jpg" alt="5" onclick="setImage(4)">
+				<img src="img/MyCollection/Rucksack/M44-1944/6.jpg" alt="6" onclick="setImage(5)">
+				<img src="img/MyCollection/Rucksack/M44-1944/7.jpg" alt="7" onclick="setImage(6)">
+				<img src="img/MyCollection/Rucksack/M44-1944/8.jpg" alt="8" onclick="setImage(7)">
+				<img src="img/MyCollection/Rucksack/M44-1944/9.jpg" alt="9" onclick="setImage(8)">
+				<img src="img/MyCollection/Rucksack/M44-1944/10.jpg" alt="10" onclick="setImage(9)">
+			</div>
+		</div>
+
+        <!-- Правая колонка -->
+			<div class="product-info">
+				<h1 class="product-title">HRE 43 "Coconut" Canteen</h1>
+				<p class="product-price">$100.00</p>
+				<div class="short-description">
+					<p>This is an original WWII-issued canteen, equipped with newly made straps, lid, and cup.</p>
+					<p>The tan-colored strap is made of natural 16mm (5/8 inch) cotton strap, just as it should be. It is hand-sewn with natural linen thread. This is a mid- to late-war period version with a simple roller buckle.</p>
+					<p>The item is located in California, USA. It will be shipped via USPS. Shipping within the continental United States is up to $10.</p>
+					<p>I accept payment via PayPal or a simple Zelle transfer.</p>
+				</div>
+				<div class="ratio ratio-16x9 mb-4">
+				<iframe
+				src="https://www.youtube.com/embed/qFNRySl9jX0"
+				title="YouTube video"
+				allowfullscreen>
+				</iframe>
+				</div>
+			</div>
+		</div>
+		
+		<center class="text-center mt-auto"> 
+			<p>It is not for sale or exchange</p>
+			<p>But, if you want to discuss this item - feel free to contact me :)</p>
+			<ul class="mobile-list d-md-none mt-3 text-start">
+				<li><a href="https://www.facebook.com/profile.php?id=61569806094078">FB BillyAl Home Workshop</a></li>
+				<li><a href="https://www.instagram.com/77billyal77/">Instagram BillyAl Home Workshop</a></li>
+				<li>billyal.home.workshop@gmail.com</li>
+			</ul>
+		</center>
+		
+	</div>
 	
 	<footer class="text-center mt-auto">
 		<p>Disclaimer: We do not sympathize with past or present fascist ideology or regimes.</p>
