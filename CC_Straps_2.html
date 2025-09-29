@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BillyAl Workshop - CCstraps #2</title>
+  <link rel="icon" href="img/icon.jpg" type="image/png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  
+	<style>
+		@font-face 
+		{
+		font-family: 'Bronzion Castle';
+		src: url('fonts/friz-quadrata-regular.woff2') format('woff2'),
+		url('fonts/friz-quadrata-regular.woff') format('woff'),
+		url('fonts/friz-quadrata-regular.ttf') format('truetype');
+		font-weight: normal;
+		font-style: normal;
+		}
+		
+		html, body 
+		{
+		height: 100%;
+		margin: 0;
+		font-family: Georgia, serif;
+		background: url('img/splinter-fabric1.jpg') no-repeat center center fixed;
+		background-size: cover;
+		color: #111;
+		display: flex;
+		flex-direction: column;
+		}
+		
+		.main-header 
+		{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 10px 20px;
+		background-color: #BAB78D;
+		border-top: 4px solid #000;
+		border-bottom: 4px solid #000;
+		position: sticky;
+		top: 0;
+		z-index: 1000;
+		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+		}
+		
+		.logo 
+		{
+		height: 150px;
+		width: auto;
+		display: block;
+		}
+		
+		.header-center 
+		{
+		text-align: center;
+		flex-grow: 1;
+		padding: 0 20px;
+		}
+		
+		.header-center h1 
+		{
+		font-family: 'Bronzion Castle', cursive;
+		font-weight: 700;
+		font-size: 2.5rem;
+		margin: 0;
+		color: #111;
+		letter-spacing: 2px;
+		}
+		
+		.header-center p 
+		{
+		font-family: 'Bronzion Castle', cursive;
+		font-weight: 700;
+		font-size: 1.5rem;
+		margin: 0;
+		color: #111;
+		letter-spacing: 2px;
+		}
+		
+		.header-right 
+		{
+		font-family: 'Bronzion Castle', cursive;
+		display: flex;
+		flex-direction: column;
+		gap: 2px;
+		align-items: flex-end;
+		}
+		
+		.header-right 
+		{
+		font-family: 'Bronzion Castle', cursive;
+		display: flex;
+		flex-direction: column;
+		gap: 2px;
+		align-items: flex-end;
+		text-align: right;
+		margin-left: auto;
+		}
+		
+		.container 
+		{
+		max-width: 1200px;
+		margin: auto;
+		padding: 1rem;
+		background: #BAB78D;
+		}
+		
+		.product-main 
+		{
+		display: flex;
+		flex-wrap: wrap;
+		gap: 2rem;
+		}
+
+		.product-images 
+		{
+		flex: 1 1 300px;
+		position: relative;
+		}
+
+		.product-images img 
+		{
+		width: 100%;
+		border: 4px solid #000;
+		border-radius: 12px;
+		background-color: #BAB78D;
+		}
+
+		.gallery 
+		{
+		margin-top: 1rem;
+		display: flex;
+		gap: 0.5rem;
+		flex-wrap: wrap;
+		}
+
+		.gallery img 
+		{
+		width: 60px;
+		height: 60px;
+		object-fit: cover;
+		cursor: pointer;
+		border: 4px solid #000;
+		border-radius: 12px;
+		background-color: #BAB78D;
+		}
+
+		.product-info 
+		{
+		flex: 1 1 300px;
+		}
+
+		.product-title,
+		.product-price,
+		.short-description 
+		{
+		font-family: 'Bronzion Castle';
+		}
+
+		.product-title 
+		{
+		font-size: 1.8rem;
+		margin-bottom: 0.5rem;
+		}
+
+		.product-price 
+		{
+		font-size: 1.4rem;
+		color: #c00;
+		margin-bottom: 1rem;
+		}
+
+		.short-description 
+		{
+		font-size: 1rem;
+		line-height: 1.5;
+		}
+
+		.image-nav 
+		{
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		font-size: 2rem;
+		color: #000;
+		background-color: rgba(255, 255, 255, 0.5);
+		border: none;
+		padding: 0 10px;
+		cursor: pointer;
+		z-index: 10;
+		}
+
+		.image-nav.left 
+		{
+		left: 0;
+		}
+
+		.image-nav.right 
+		{
+		right: 0;
+		}
+
+		@media (max-width: 768px) 
+		{
+			.product-main 
+			{
+			flex-direction: column;
+			}
+
+			.product-images,
+			.product-info 
+			{
+			width: 100%;
+			}
+
+			.product-title 
+			{
+			font-size: 1.5rem;
+			}
+
+			.product-price 
+			{
+			font-size: 1.2rem;
+			}
+		}
+				
+		center 
+		{
+		font-family: 'Bronzion Castle', cursive;
+		font-size: 1.75rem;
+		margin: 0;
+		color: #fff;
+		text-shadow: -1px -1px 0 #111,
+					 1px -1px 0 #111,
+					 -1px  1px 0 #111,
+					 1px  1px 0 #111;
+		}
+		
+		
+		footer 
+		{
+		font-family: 'Bronzion Castle', cursive;
+		background-color: #BAB78D;
+		padding: 1.5rem;
+		text-align: center;
+		border-top: 4px solid #000;
+		border-bottom: 4px solid #000;
+		font-size: 1rem;
+		color: #333;
+		flex-shrink: 0;
+		}
+		
+	</style>
+</head>
+
+<body>
+	<header class="main-header">
+		<div class="header-left">
+			<a href="index.html">
+			<img src="img/logo_oliv.jpg" alt="BillyAl Logo" class="logo">
+			</a>
+		</div>
+		
+		<div class="header-center d-none d-md-block">
+			<h1>Welcome to BillyAl-home-workshop website</h1>
+			<p>QUALITY REPRODUCTIONS FOR WW1-WW2 GERMAN REENACTMENT</p>
+		</div>
+		
+		<div class="header-right d-none d-md-block">
+			<p> <a href="https://www.facebook.com/profile.php?id=61569806094078">FB BillyAl Home Workshop</a> </p>
+			<p> <a href="https://www.instagram.com/77billyal77/">Instagram BillyAl Home Workshop</a> </p>
+			<p>billyal.home.workshop@gmail.com</p>
+		</div>
+	</header>
+	
+	<div class="section-nav d-flex justify-content-center flex-wrap text-center py-2"
+		style="font-family: 'Bronzion Castle'; background-color: #BAB78D; border-bottom: 4px solid #000; position: sticky; top: 177px; z-index: 999;">
+		<a href="billyalproduction.html" class="mx-3 my-1 text-dark text-decoration-none fw-bold">
+		BillyAl Production
+		</a>
+	
+		<a href="MyCollection.html" class="mx-3 my-1 text-dark text-decoration-none fw-bold">
+		My Collection
+		</a>
+	</div>
+	
+	<div class="container">
+    <!-- Breadcrumbs -->
+    <nav class="d-none d-md-block" aria-label="breadcrumb" style="--bs-breadcrumb-divider: '>'; font-family: 'Bronzion Castle'; margin-bottom: 1rem;">
+      <ol class="breadcrumb bg-transparent p-2">
+        <li class="breadcrumb-item"><a href="Index.html" class="text-dark text-decoration-none">Home</a></li>
+        <li class="breadcrumb-item"><a href="BillyAlProduction.html" class="text-dark text-decoration-none">BillyAl Production</a></li>
+		<li class="breadcrumb-item"><a href="CoconutCanteensStraps.html" class="text-dark text-decoration-none">Coconut Canteens Straps</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Straps for Coconut Canteen #2</li>
+      </ol>
+    </nav>
+	
+	<div class="product-main">
+      <!-- Левая колонка -->
+      <div class="product-images">
+        <button class="image-nav left" onclick="prevImage()">&#8249;</button>
+        <img id="main-image" src="img/BillyAlProduction/CCStraps/CC_Straps_2/1.jpg" alt="1" />
+        <button class="image-nav right" onclick="nextImage()">&#8250;</button>
+
+        <div class="gallery" id="gallery">
+          <img src="img/BillyAlProduction/CCStraps/CC_Straps_2/1.jpg" alt="1" onclick="setImage(0)">
+          <img src="img/BillyAlProduction/CCStraps/CC_Straps_2/2.jpg" alt="2" onclick="setImage(1)">
+          <img src="img/BillyAlProduction/CCStraps/CC_Straps_2/3.jpg" alt="3" onclick="setImage(2)">
+          <img src="img/BillyAlProduction/CCStraps/CC_Straps_2/4.jpg" alt="4" onclick="setImage(3)">
+          <img src="img/BillyAlProduction/CCStraps/CC_Straps_2/5.jpg" alt="5" onclick="setImage(4)">
+          <img src="img/BillyAlProduction/CCStraps/CC_Straps_2/6.jpg" alt="6" onclick="setImage(5)">
+		  <img src="img/BillyAlProduction/CCStraps/CC_Straps_2/7.jpg" alt="7" onclick="setImage(6)">
+		  <img src="img/BillyAlProduction/CCStraps/CC_Straps_2/8.jpg" alt="7" onclick="setImage(7)">
+		  <img src="img/BillyAlProduction/CCStraps/CC_Straps_2/9.jpg" alt="7" onclick="setImage(8)">        
+        </div>
+      </div>
+
+      <!-- Правая колонка -->
+      <div class="product-info">
+        <h1 class="product-title">Straps for Coconut Canteen #2</h1>
+        <p class="product-price">75 USD</p>
+        <div class="short-description">
+          <p>Straps made using correct width and pattern original german webbing, metal furniture also disappeared from the market and the only way it's made it by myelf ... Even treads waxed linen.. For this reason straps expensive. However, the final decision to purchase is, of course, entirely yours.</p>
+          <p>Correct pattern original german cotton webbing</p>
+		  <p>All metall furniture is reproductions made by me</p>
+		  <p>Waxed linen treads ..</p>
+        </div>
+		<!--
+		<div class="ratio ratio-16x9 mb-4">
+            <iframe
+            src="https://www.youtube.com/embed/qFNRySl9jX0"
+            title="YouTube video"
+            allowfullscreen>
+            </iframe>
+        </div>
+		-->
+      </div>
+    </div>
+		<center class="text-center mt-auto"> 
+			<p>Please contack me for purchase</p>
+			<p>I'll accept Paypal F&F or simple Zelle transfer. Shipping over the continental USA preffered and will be payd additionally</p>
+			<ul class="mobile-list d-md-none mt-3 text-start">
+				<li><a href="https://www.facebook.com/profile.php?id=61569806094078">FB BillyAl Home Workshop</a></li>
+				<li><a href="https://www.instagram.com/77billyal77/">Instagram BillyAl Home Workshop</a></li>
+				<li>billyal.home.workshop@gmail.com</li>
+			</ul>
+		</center>
+	
+  </div>
+	
+	<footer class="text-center mt-auto">
+		<p>Disclaimer: We do not sympathize with past or present fascist ideology or regimes.</p>
+		<p>The products sold within are for historical reproduction and reenactment purposes only.</p>
+  </footer>
+  
+  <script>
+    const imagePaths = [
+      "img/BillyAlProduction/CCStraps/CC_Straps_2/1.jpg",
+      "img/BillyAlProduction/CCStraps/CC_Straps_2/2.jpg",
+      "img/BillyAlProduction/CCStraps/CC_Straps_2/3.jpg",
+      "img/BillyAlProduction/CCStraps/CC_Straps_2/4.jpg",
+      "img/BillyAlProduction/CCStraps/CC_Straps_2/5.jpg",
+      "img/BillyAlProduction/CCStraps/CC_Straps_2/6.jpg",
+	  "img/BillyAlProduction/CCStraps/CC_Straps_2/7.jpg",
+	  "img/BillyAlProduction/CCStraps/CC_Straps_2/8.jpg",
+	  "img/BillyAlProduction/CCStraps/CC_Straps_2/9.jpg"
+    ];
+
+    let currentIndex = 0;
+
+    function updateMainImage() {
+      document.getElementById('main-image').src = imagePaths[currentIndex];
+    }
+
+    function setImage(index) {
+      currentIndex = index;
+      updateMainImage();
+    }
+
+    function nextImage() {
+      currentIndex = (currentIndex + 1) % imagePaths.length;
+      updateMainImage();
+    }
+
+    function prevImage() {
+      currentIndex = (currentIndex - 1 + imagePaths.length) % imagePaths.length;
+      updateMainImage();
+    }
+  </script>
+  
+	
+</body>
+</html>
